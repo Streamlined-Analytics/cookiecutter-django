@@ -1,4 +1,4 @@
-{% raw %}{% load allauth %}
+{% load allauth %}
 {% load crispy_forms_tags %}
 
 {% if attrs.type == "textarea" %}
@@ -63,4 +63,4 @@
 {% endif %}
 {% if slots.help_text %}
   <div class="form-text">{% slot help_text %}{% endslot %}</div>
-{% endif %}{% endraw %}
+{% endif %}

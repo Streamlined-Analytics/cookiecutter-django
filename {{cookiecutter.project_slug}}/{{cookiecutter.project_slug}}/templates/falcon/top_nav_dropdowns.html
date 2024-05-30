@@ -1,0 +1,74 @@
+{% load static %}
+<nav class="navbar navbar-light navbar-glass navbar-top navbar-expand-lg" data-move-target="#navbarVerticalNav"
+     data-navbar-top="combo">
+
+  <button class="btn navbar-toggler-humburger-icon navbar-toggler me-1 me-sm-3" type="button" data-bs-toggle="collapse"
+          data-bs-target="#navbarVerticalCollapse" aria-controls="navbarVerticalCollapse" aria-expanded="false"
+          aria-label="Toggle Navigation"><span class="navbar-toggle-icon"><span class="toggle-line"></span></span>
+  </button>
+  <div class="collapse navbar-collapse scrollbar" id="navbarStandard">
+    <ul class="navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
+      {% for key, value in navbar_links.items %}
+        <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
+                                         data-bs-toggle="dropdown"
+                                         aria-haspopup="true" aria-expanded="false" id="{{ key }}">{{ key }}</a>
+          <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="{{ key }}">
+            <div class="bg-white dark__bg-1000 rounded-3 py-2">
+              {% for inner_key, inner_value in value.items %}
+                <a class="dropdown-item link-600 fw-medium" href="{{ inner_value.0 }}">{{ inner_key }}</a>
+              {% endfor %}
+            </div>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
+    <li class="nav-item px-2">
+      <div class="theme-control-toggle fa-icon-wait">
+        <input class="form-check-input ms-0 theme-control-toggle-input" id="themeControlToggle" type="checkbox"
+               data-theme-control="theme" value="dark"/>
+        <label class="mb-0 theme-control-toggle-label theme-control-toggle-light" for="themeControlToggle"
+               data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to light theme"><span
+          class="fas fa-sun fs-0"></span></label>
+        <label class="mb-0 theme-control-toggle-label theme-control-toggle-dark" for="themeControlToggle"
+               data-bs-toggle="tooltip" data-bs-placement="left" title="Switch to dark theme"><span
+          class="fas fa-moon fs-0"></span></label>
+      </div>
+    </li>
+
+    <li class="nav-item dropdown px-1">
+      <a class="nav-link fa-icon-wait nine-dots p-1" id="navbarDropdownMenu" role="button"
+         data-hide-on-body-scroll="data-hide-on-body-scroll" data-bs-toggle="dropdown" aria-haspopup="true"
+         aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="43" viewBox="0 0 16 16" fill="none">
+          <circle cx="2" cy="2" r="2" fill="#6C6E71"></circle>
+          <circle cx="2" cy="8" r="2" fill="#6C6E71"></circle>
+          <circle cx="2" cy="14" r="2" fill="#6C6E71"></circle>
+          <circle cx="8" cy="8" r="2" fill="#6C6E71"></circle>
+          <circle cx="8" cy="14" r="2" fill="#6C6E71"></circle>
+          <circle cx="14" cy="8" r="2" fill="#6C6E71"></circle>
+          <circle cx="14" cy="14" r="2" fill="#6C6E71"></circle>
+          <circle cx="8" cy="2" r="2" fill="#6C6E71"></circle>
+          <circle cx="14" cy="2" r="2" fill="#6C6E71"></circle>
+        </svg>
+      </a>
+      <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0"
+           aria-labelledby="navbarDropdownMenu">
+        <div class="bg-white dark__bg-1000 rounded-2 py-2">
+          {% if request.user.is_superuser %}
+            <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
+          {% endif %}
+          <div class="dropdown-divider"></div>
+          {#          <a class="dropdown-item" href="#">Settings</a>#}
+          {% if request.user.is_authenticated %}
+{#            <a class="dropdown-item" href="{% url 'users:password_reset' %}">Change Password</a>#}
+            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
+          {% else %}
+            <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
+          {% endif %}
+        </div>
+      </div>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,22 @@
+{% extends 'mfa/base.html' %}
+{% load static %}
+{% load i18n %}
+{% load account socialaccount %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <div>
+    <h5>Reauthenticate</h5>
+    <p>To safeguard the security of your account, please enter your password:</p>
+    <form method="post" action="{% url 'account_reauthenticate' %}">
+      {% csrf_token %}
+      {{ form|crispy }}
+      {% if redirect_field_value %}
+        <input type="hidden"
+               name="{{ redirect_field_name }}"
+               value="{{ redirect_field_value }}"/>
+      {% endif %}
+      <button type="submit" class="btn btn-primary">Confirm</button>
+    </form>
+  </div>
+{% endblock %}
