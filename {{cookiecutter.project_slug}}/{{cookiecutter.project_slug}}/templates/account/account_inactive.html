@@ -1,12 +1,15 @@
-{% extends "account/base.html" %}
+{{ "{% extends 'account/base.html' %}" }}
 
-{% load i18n %}
+{{ "{% load i18n %}" }}
+
+{{ "{% block title %}" }}
+{{ '{% translate "Account Inactive" %}' }}
+{{ '{% endblock title %}' }}
 
 
-{% block title %}
-  {% translate "Account Inactive" %}
-{% endblock title %}
+{{ "{% block inner %}" }}
+<p>
+  {{ '{% translate "This account is inactive." %}' }}
+</p>
 
-{% block inner %}
-  <p>{% translate "This account is inactive." %}</p>
-{% endblock inner %}
+{{ "{% endblock inner %}" }}

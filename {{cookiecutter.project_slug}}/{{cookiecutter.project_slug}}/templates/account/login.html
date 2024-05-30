@@ -1,7 +1,7 @@
-{% load static %}
-{% load i18n %}
-{% load account socialaccount %}
-{% load crispy_forms_tags %}
+{{ "{% load static %}" }}
+{{ "{% load i18n %}" }}
+{{ "{% load account socialaccount %}" }}
+{{ "{% load crispy_forms_tags %}" }}
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en-US" dir="ltr">
 
@@ -14,7 +14,7 @@
   <!-- ===============================================-->
   <!--    Document Title-->
   <!-- ===============================================-->
-  <title>{{ business_name }} | Login</title>
+  <title>{{ "{{ business_name }}" }} | Login</title>
 
 
   <!-- ===============================================-->
@@ -32,8 +32,8 @@
   <meta name="msapplication-TileImage"
         content="https://theoraclegroup.co.uk/wp-content/uploads/2023/04/siteicon23-300x300.jpg">
   <meta name="theme-color" content="#ffffff">
-  <script src="{% static 'falcon_assets/assets/js/config.js' %}"></script>
-  <script src="{% static 'falcon_assets/vendors/simplebar/simplebar.min.js' %}"></script>
+  <script src="{{ "{% static 'falcon_assets/assets/js/config.js' %}" }}"></script>
+  <script src="{{ "{% static 'falcon_assets/vendors/simplebar/simplebar.min.js' %}" }}"></script>
 
 
   <!-- ===============================================-->
@@ -43,11 +43,11 @@
   <link
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:300,400,500,600,700,800,900&amp;display=swap"
     rel="stylesheet">
-  <link href="{% static 'falcon_assets/vendors/simplebar/simplebar.min.css' %}" rel="stylesheet">
-  <link href="{% static 'falcon_assets/assets/css/theme-rtl.css' %}" rel="stylesheet" id="style-rtl">
-  <link href="{% static 'falcon_assets/assets/css/theme.css' %}" rel="stylesheet" id="style-default">
-  <link href="{% static 'falcon_assets/assets/css/user-rtl.css' %}" rel="stylesheet" id="user-style-rtl">
-  <link href="{% static 'falcon_assets/assets/css/user.css' %}" rel="stylesheet" id="user-style-default">
+  <link href="{{ "{% static 'falcon_assets/vendors/simplebar/simplebar.min.css' %}" }}" rel="stylesheet">
+  <link href="{{ "{% static 'falcon_assets/assets/css/theme-rtl.css' %}" }}" rel="stylesheet" id="style-rtl">
+  <link href="{{ "{% static 'falcon_assets/assets/css/theme.css' %}" }}" rel="stylesheet" id="style-default">
+  <link href="{{ "{% static 'falcon_assets/assets/css/user-rtl.css' %}" }}" rel="stylesheet" id="user-style-rtl">
+  <link href="{{ "{% static 'falcon_assets/assets/css/user.css' %}" }}" rel="stylesheet" id="user-style-default">
   <script>
     var isRTL = JSON.parse(localStorage.getItem('isRTL'));
     if (isRTL) {
@@ -84,7 +84,7 @@
     <div class="row flex-center min-vh-100 py-6">
       <div class="col-sm-10 col-md-8 col-lg-6 col-xl-5 col-xxl-4">
         <a class="d-flex flex-center mb-4" href="#">
-          <span class="font-sans-serif fw-bolder fs-5 d-inline-block">{{ business_name }}</span>
+          <span class="font-sans-serif fw-bolder fs-5 d-inline-block">{{ "{{ business_name }}" }}</span>
         </a>
         <div class="card">
           <div class="card-body p-4 p-sm-5">
@@ -93,17 +93,17 @@
                 <h5>Log In</h5>
               </div>
             </div>
-            <form class="login" method="post" action="{% url 'account_login' %}">
-              {% csrf_token %}
-              {{ form|crispy }}
-              {% if redirect_field_value %}
+            <form class="login" method="post" action="{{ "{% url 'account_login' %}" }}">
+              {{ "{% csrf_token %}" }}
+              {{ "{{ form|crispy }}" }}
+              {{ "{% if redirect_field_value %}" }}
                 <input type="hidden"
-                       name="{{ redirect_field_name }}"
-                       value="{{ redirect_field_value }}"/>
-              {% endif %}
+                       name="{{ "{{ redirect_field_name }}" }}"
+                       value="{{ "{{ redirect_field_value }}" }}"/>
+              {{ "{% endif %}" }}
               <a class="button secondaryAction"
-                 href="{% url 'account_reset_password' %}">{% translate "Forgot Password?" %}</a>
-              <button class="primaryAction btn btn-primary" type="submit">{% translate "Sign In" %}</button>
+                 href="{{ "{% url 'account_reset_password' %}" }}">{{ "{% translate 'Forgot Password?' %}" }}</a>
+              <button class="primaryAction btn btn-primary" type="submit">{{ "{% translate 'Sign In' %}" }}</button>
             </form>
 
           </div>
@@ -119,15 +119,15 @@
 <!-- ===============================================-->
 <!--    JavaScripts-->
 <!-- ===============================================-->
-<script src="{% static 'falcon_assets/vendors/popper/popper.min.js' %}"></script>
-<script src="{% static 'falcon_assets/vendors/bootstrap/bootstrap.min.js' %}"></script>
-<script src="{% static 'falcon_assets/vendors/anchorjs/anchor.min.js' %}"></script>
-<script src="{% static 'falcon_assets/vendors/is/is.min.js' %}"></script>
-<script src="{% static 'falcon_assets/vendors/fontawesome/all.min.js' %}"></script>
-<script src="{% static 'falcon_assets/vendors/lodash/lodash.min.js' %}"></script>
+<script src="{{ "{% static 'falcon_assets/vendors/popper/popper.min.js' %}" }}"></script>
+<script src="{{ "{% static 'falcon_assets/vendors/bootstrap/bootstrap.min.js' %}" }}"></script>
+<script src="{{ "{% static 'falcon_assets/vendors/anchorjs/anchor.min.js' %}" }}"></script>
+<script src="{{ "{% static 'falcon_assets/vendors/is/is.min.js' %}" }}"></script>
+<script src="{{ "{% static 'falcon_assets/vendors/fontawesome/all.min.js' %}" }}"></script>
+<script src="{{ "{% static 'falcon_assets/vendors/lodash/lodash.min.js' %}" }}"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=window.scroll"></script>
-<script src="{% static 'falcon_assets/vendors/list.js/list.min.js' %}"></script>
-<script src="{% static 'falcon_assets/assets/js/theme.js' %}"></script>
+<script src="{{ "{% static 'falcon_assets/vendors/list.js/list.min.js' %}" }}"></script>
+<script src="{{ "{% static 'falcon_assets/assets/js/theme.js' %}" }}"></script>
 
 </body>
 
