@@ -1,4 +1,4 @@
-{% load static %}
+{{ "{% load static %}" }}
 <nav class="navbar navbar-light navbar-glass navbar-top navbar-expand-lg" data-move-target="#navbarVerticalNav"
      data-navbar-top="combo">
 
@@ -8,19 +8,19 @@
   </button>
   <div class="collapse navbar-collapse scrollbar" id="navbarStandard">
     <ul class="navbar-nav" data-top-nav-dropdowns="data-top-nav-dropdowns">
-      {% for key, value in navbar_links.items %}
+      {{ "{% for key, value in navbar_links.items %}" }}
         <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="#" role="button"
                                          data-bs-toggle="dropdown"
-                                         aria-haspopup="true" aria-expanded="false" id="{{ key }}">{{ key }}</a>
-          <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="{{ key }}">
+                                         aria-haspopup="true" aria-expanded="false" id="{{ "{{ key }}" }}">{{ "{{ key }}" }}</a>
+          <div class="dropdown-menu dropdown-caret dropdown-menu-card border-0 mt-0" aria-labelledby="{{ "{{ key }}" }}">
             <div class="bg-white dark__bg-1000 rounded-3 py-2">
-              {% for inner_key, inner_value in value.items %}
-                <a class="dropdown-item link-600 fw-medium" href="{{ inner_value.0 }}">{{ inner_key }}</a>
-              {% endfor %}
+              {{ "{% for inner_key, inner_value in value.items %}" }}
+                <a class="dropdown-item link-600 fw-medium" href="{{ "{{ inner_value.0 }}" }}">{{ "{{ inner_key }}" }}</a>
+              {{ "{% endfor %}" }}
             </div>
           </div>
         </li>
-      {% endfor %}
+      {{ "{% endfor %}" }}
     </ul>
   </div>
   <ul class="navbar-nav navbar-nav-icons ms-auto flex-row align-items-center">
@@ -56,17 +56,15 @@
       <div class="dropdown-menu dropdown-caret dropdown-caret dropdown-menu-end py-0"
            aria-labelledby="navbarDropdownMenu">
         <div class="bg-white dark__bg-1000 rounded-2 py-2">
-          {% if request.user.is_superuser %}
-            <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
-          {% endif %}
+          {{ "{% if request.user.is_superuser %}" }}
+            <a class="dropdown-item" href="{{ "{% url 'admin:index' %}" }}">Admin</a>
+          {{ "{% endif %}" }}
           <div class="dropdown-divider"></div>
-          {#          <a class="dropdown-item" href="#">Settings</a>#}
-          {% if request.user.is_authenticated %}
-{#            <a class="dropdown-item" href="{% url 'users:password_reset' %}">Change Password</a>#}
-            <a class="dropdown-item" href="{% url 'account_logout' %}">Logout</a>
-          {% else %}
-            <a class="dropdown-item" href="{% url 'account_login' %}">Login</a>
-          {% endif %}
+          {{ "{% if request.user.is_authenticated %}" }}
+            <a class="dropdown-item" href="{{ "{% url 'account_logout' %}" }}">Logout</a>
+          {{ "{% else %}" }}
+            <a class="dropdown-item" href="{{ "{% url 'account_login' %}" }}">Login</a>
+          {{ "{% endif %}" }}
         </div>
       </div>
     </li>

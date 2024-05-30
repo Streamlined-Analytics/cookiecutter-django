@@ -353,7 +353,7 @@
     $('.form-select').select2();
   });
 </script>
-<script src="{% static 'falcon_assets/assets/js/flatpickr.js' %}"></script>
+<script src="{{ "{% static 'falcon_assets/assets/js/flatpickr.js' %}" }}"></script>
 <script>
   $('.dateinput').each(function () {
     var defaultDate = $(this).val()
