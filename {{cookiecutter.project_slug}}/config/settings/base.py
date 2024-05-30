@@ -380,7 +380,6 @@ REST_FRAMEWORK = {
     "DEFAULT_PAGINATION_CLASS": "rest_framework_datatables_editor.pagination.DatatablesPageNumberPagination",
     "PAGE_SIZE": 50,
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
-
 }
 
 # django-cors-headers - https://github.com/adamchainz/django-cors-headers#setup
