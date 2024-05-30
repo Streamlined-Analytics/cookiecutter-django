@@ -274,7 +274,7 @@ def test_djlint_check_passes(cookies, context_override):
     ["use_docker", "expected_test_script"],
     [
         ("n", "pytest"),
-        ("y", "docker compose -f docker-compose.local.yml run django pytest"),
+        ("y", "docker compose -f local.yml run django pytest"),
     ],
 )
 def test_travis_invokes_pytest(cookies, context, use_docker, expected_test_script):
@@ -299,7 +299,7 @@ def test_travis_invokes_pytest(cookies, context, use_docker, expected_test_scrip
     ["use_docker", "expected_test_script"],
     [
         ("n", "pytest"),
-        ("y", "docker compose -f docker-compose.local.yml run django pytest"),
+        ("y", "docker compose -f local.yml run django pytest"),
     ],
 )
 def test_gitlab_invokes_precommit_and_pytest(cookies, context, use_docker, expected_test_script):
@@ -326,7 +326,7 @@ def test_gitlab_invokes_precommit_and_pytest(cookies, context, use_docker, expec
     ["use_docker", "expected_test_script"],
     [
         ("n", "pytest"),
-        ("y", "docker compose -f docker-compose.local.yml run django pytest"),
+        ("y", "docker compose -f local.yml run django pytest"),
     ],
 )
 def test_github_invokes_linter_and_pytest(cookies, context, use_docker, expected_test_script):

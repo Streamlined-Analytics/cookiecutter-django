@@ -79,8 +79,8 @@ def remove_docker_files():
     shutil.rmtree("compose")
 
     file_names = [
-        "docker-compose.local.yml",
-        "docker-compose.production.yml",
+        "local.yml",
+        "production.yml",
         ".dockerignore",
     ]
     for file_name in file_names:
