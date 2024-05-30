@@ -301,7 +301,7 @@
       ajax: {
         url: url,
         headers: {
-          "X-CSRFToken": "{{ csrf_token }}"
+          "X-CSRFToken": "{{ "{{ csrf_token }}" }}"
         },
         error: function (xhr, error, thrown) {
           if (xhr.status === 400) {
