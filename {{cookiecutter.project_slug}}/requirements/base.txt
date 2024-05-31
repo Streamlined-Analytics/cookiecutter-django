@@ -58,3 +58,6 @@ django-widget-tweaks
 django-filter
 django-render-block
 pandas
+requests
+lxml
+beautifulsoup4
