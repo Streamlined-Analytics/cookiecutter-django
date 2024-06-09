@@ -225,6 +225,7 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "{{cookiecutter.project_slug}}.users.context_processors.allauth_settings",
                 "{{cookiecutter.project_slug}}.core.context_processors.business_name",
+                "{{cookiecutter.project_slug}}.core.context_processors.navbar_links",
             ],
         },
     },
