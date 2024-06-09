@@ -104,6 +104,8 @@ THIRD_PARTY_APPS = [
     "taggit",
     "django_htmx",
     "rest_framework_datatables_editor",
+    "hijack",
+    "hijack.contrib.admin",
 ]
 
 LOCAL_APPS = [
@@ -173,6 +175,9 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "allauth.account.middleware.AccountMiddleware",
+    "django_htmx.middleware.HtmxMiddleware",
+    "allauth.account.middleware.AccountMiddleware",
+    "hijack.middleware.HijackUserMiddleware",
 ]
 
 # STATIC

@@ -57,6 +57,8 @@ django-taggit
 django-widget-tweaks
 django-filter
 django-render-block
+django-hijack
+python-dateutil
 pandas
 requests
 lxml
