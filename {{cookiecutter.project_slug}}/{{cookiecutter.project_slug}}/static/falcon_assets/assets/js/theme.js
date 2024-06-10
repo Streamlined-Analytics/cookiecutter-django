@@ -410,6 +410,16 @@ var getPastDates = function getPastDates(duration) {
 var getRandomNumber = function getRandomNumber(min, max) {
     return Math.floor(Math.random() * (max - min) + min);
 };
+
+var getRandomColor = function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 var utils = {
     docReady: docReady,
     breakpoints: breakpoints,
@@ -423,6 +433,7 @@ var utils = {
     rgbaColor: rgbaColor,
     getColor: getColor,
     getColors: getColors,
+    getRandomColor: getRandomColor,
     getSubtleColors: getSubtleColors,
     getGrays: getGrays,
     getOffset: getOffset,
