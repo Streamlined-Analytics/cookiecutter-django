@@ -5,7 +5,8 @@ This file has two things.
 2) Is an example of how to create use htmx to add rows to the formset dynamically.
 We create the base form, then create the formset, then use the formsethelper
 to style the formset (e.g. making it all a row, with a button to add more rows).
-We then use the create_new_form function to create a new formset with the new formset number.
+We then use the create_new_form function
+to create a new formset with the new formset number.
 The partial uses htmx oob-swaps to swap in the formset information,
 and normal htmx to add in the new row.
 """
