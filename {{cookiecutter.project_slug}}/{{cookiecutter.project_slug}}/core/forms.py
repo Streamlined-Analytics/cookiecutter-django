@@ -65,7 +65,7 @@ BaseFormSet = formset_factory(BaseFormSetForm, extra=1)
 class BaseFormSetHelper(FormHelper):
     pass
 
-def create_new_form(new_total_formsets):
+def create_new_form(request, new_total_formsets):
     formset = BaseFormSet(prefix=f"form-{new_total_formsets}")
     helper = BaseFormSetHelper()
     context = {
@@ -95,7 +95,7 @@ def create_new_form(new_total_formsets):
         f"form-{new_total_formsets}-line_option",
     )
     context = {
-        "formset": mark_safe(str(formset_div)),
+        "formset": mark_safe(str(formset_div)),  # noqa: S308
         "new_total_formsets": new_total_formsets + 1,
         "htmx_mode": True,
     }

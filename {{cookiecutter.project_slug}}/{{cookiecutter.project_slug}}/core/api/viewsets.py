@@ -1,6 +1,7 @@
 from rest_framework import permissions
 from rest_framework_datatables_editor.filters import DatatablesFilterBackend
 from rest_framework_datatables_editor.viewsets import DatatablesEditorModelViewSet
+from django_filters.rest_framework import DjangoFilterBackend
 # from .filters import BaseFilter
 # from .serializers import BaseSerializer
 
