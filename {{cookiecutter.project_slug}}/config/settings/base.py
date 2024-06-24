@@ -413,3 +413,5 @@ WEBPACK_LOADER = {
 SHELL_PLUS_IMPORTS = ['from config.settings.base import env']
 
 company_name = ""
+
+LOGIN_REDIRECT_URL = "/"
