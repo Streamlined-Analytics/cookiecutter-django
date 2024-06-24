@@ -10,7 +10,7 @@
               _="on click remove #modal-form"></button>
     </div>
     <div class="modal-body">
-      <form method="post" action="{{ "{{ action_url }}" }}">
+      <form {{ "{% if not htmx_mode %}" }} method="post" action="{{ "{{ action_url }}" }} {{ "{% endif %}" }}">
         {{ "{% csrf_token %}" }}
         <div id="form-container">
           {{ "{% block form %}" }}
@@ -34,7 +34,10 @@
         {{ "{% endif %}" }}
         {{ "{% if not crispy_form %}" }}
         <div class="d-flex justify-content-center">
-          <button class="btn btn-primary" type="submit">
+          <button class="btn btn-primary" type="submit"
+                  {{ "{% if htmx_mode %}" }}hx-post="{{ "{{ action_url }}" }}"
+                  hx-include="#modal-form"{{ "{% endif %}" }}
+          >
             Submit
           </button>
         </div>
