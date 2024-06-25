@@ -221,8 +221,12 @@
 <!--    End of Main Content-->
 <!-- ===============================================-->
 
-{{ "{% if not page_with_filter %}" }}
-{{ "{% else %}" }}
+<!-- ===============================================-->
+<!--    Sidebar Filter-->
+<!-- ===============================================-->
+
+<!-- Can use the below to add a filter into the sidebar -->
+{{ "{% if page_with_filter %}" }}
 <div class="offcanvas offcanvas-end settings-panel border-0" id="settings-offcanvas" tabindex="-1"
      aria-labelledby="settings-offcanvas">
   <div class="offcanvas-header settings-panel-header bg-shape">
@@ -265,6 +269,10 @@
   </div>
 </a>
 {{ "{% endif %}" }}
+<!-- ===============================================-->
+<!--    End of Sidebar Filter-->
+<!-- ===============================================-->
+
 <!-- ===============================================-->
 <!--    JavaScripts-->
 <!-- ===============================================-->
