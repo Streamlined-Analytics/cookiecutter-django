@@ -412,4 +412,4 @@ WEBPACK_LOADER = {
 # ------------------------------------------------------------------------------
 SHELL_PLUS_IMPORTS = ['from config.settings.base import env']
 
-company_name = ""
+company_name = "{{ cookiecutter.project_template_name }}"
